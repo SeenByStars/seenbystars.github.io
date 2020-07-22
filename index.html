@@ -8,14 +8,16 @@
 <body>
 	<div id="headline">
 		<h1>SeenByTheStars's amazing website</h1>
-		<p>A place to find some silly stuff.<br>
-		But nothing as to how to escape the meaningless void.<br>
-		No Idea how to do that.</p>
+		<p>A place to find some silly stuff. But no shelter from the existential void.<br>
+		No Idea how to find that.</p>
 	</div>
 	<div id="content">
 		<h2>Games</h2>
 		 <ul>
-			<li><a href="Dungeon Hurling">Dungeon Hurling</a></li>
+			<li>
+				<a class="collapsible">Dungeon Hurling</a>
+				<div class="content">teserwreetewbeogtbewgotbwgtweitbwebgtbrwtfgbwrgbpipbippbbnppbnpbnt<br>test</div>
+			</li>
 		</ul>
 		<h2>Social Media</h2>
 		<ul>
@@ -23,5 +25,26 @@
 			<li><a href="https://twitter.com/StarsSeen">Twitter</a></li>
 		</ul>
 	</div>
+	
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var container = document.getElementById("content");
+		var i;
+		console.log(coll);
+		
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+				content.style.maxHeight = null;
+				container.style.width = "250px";
+			} else {
+				content.style.maxHeight = content.scrollHeight + "px";
+				container.style.width = "80%";
+			} 
+			});
+		}
+</script>
 </body>
 </html> 
